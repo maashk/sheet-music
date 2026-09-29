@@ -18,7 +18,7 @@ global = {
 % ==========================================
 % Ringer 1 (High / Treble Melody: C6 - G6)
 % ==========================================
-r1Melody = \relative c''' {
+ringerOneMelody = \relative c''' {
   \global
   
   % --- Intro (音樂盒效果) ---
@@ -59,7 +59,7 @@ r1Melody = \relative c''' {
 % ==========================================
 % Ringer 2 (Mid / Harmony: C5 - A5)
 % ==========================================
-r2Harmony = \relative c'' {
+ringerTwoHarmony = \relative c'' {
   \global
   
   % --- Intro ---
@@ -93,7 +93,7 @@ r2Harmony = \relative c'' {
 % ==========================================
 % Ringer 3 (Low / Bass Line: C4 - A4)
 % ==========================================
-r3Bass = \relative c {
+ringerThreeBass = \relative c {
   \global
   
   % --- Intro ---
@@ -132,24 +132,19 @@ r3Bass = \relative c {
     \new Staff \with {
       instrumentName = #"Ringer 1 (High)"
       shortInstrumentName = #"R1"
-    } \r1Melody
+    } \ringerOneMelody
 
     \new Staff \with {
       instrumentName = #"Ringer 2 (Mid)"
       shortInstrumentName = #"R2"
-    } \r2Harmony
+    } \ringerTwoHarmony
 
     \new Staff \with {
       instrumentName = #"Ringer 3 (Bass)"
       shortInstrumentName = #"R3"
-    } { \clef bass \r3Bass }
+    } { \clef bass \ringerThreeBass }
   >>
 
-  \layout {
-    \context {
-      \Staff
-      \consists "Mark_engraver"
-    }
-  }
+  \layout { }
   \midi { }
 }
